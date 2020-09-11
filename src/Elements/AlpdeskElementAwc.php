@@ -18,7 +18,8 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
       try {
         switch ($data['method']) {
           case 'ping':
-            $response = 'pong';
+            $response['error'] = false;
+            $response['msg'] = 'pong';
             break;
           default:
             break;
