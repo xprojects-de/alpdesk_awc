@@ -1,0 +1,32 @@
+{
+  "name": "alpdesk/alpdesk-awc",
+  "description": "AWC-Plugin for Alpdesk",
+  "keywords": ["contao", "alpdesk", "awc"],
+  "type": "contao-bundle",
+  "version": "0.0.1.0-RC1",
+  "license": "LGPL-3.0-or-later",
+  "require": {
+    "php": ">=7.4",
+    "alpdesk/alpdesk-core": "^0.1"
+  },
+  "authors": [
+    {
+      "name": "xprojects",
+      "homepage": "https://x-projects.de",
+      "email": "infos@x-projects.de",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Alpdesk\\AlpdeskAwcPlugin\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Alpdesk\\AlpdeskAwcPlugin\\ContaoManager\\Plugin",
+    "contao-component-dir": "public"
+  },
+  "config": {
+    "contao-component-dir": "public"
+  }
+}
