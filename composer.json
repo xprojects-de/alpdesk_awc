@@ -3,11 +3,16 @@
   "description": "AWC-Plugin for Alpdesk",
   "keywords": ["contao", "alpdesk", "awc"],
   "type": "contao-bundle",
-  "version": "0.0.1.0-RC1",
   "license": "LGPL-3.0-or-later",
   "require": {
     "php": ">=7.4",
     "alpdesk/alpdesk-core": "^0.1"
+  },
+  "conflict": {
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0"
   },
   "authors": [
     {
