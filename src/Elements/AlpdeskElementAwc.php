@@ -63,9 +63,9 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
                 "first_name" => "Carina",
                 "last_name" => "Hummel",
                 "main_person" => false,
-                "arrival" => "1986-09-01",
+                "arrival" => date('Y-m-d'),
                 "departure" => date('Y-m-d'),
-                "birthdate" => date('Y-m-d'),
+                "birthdate" => '1986-11-10',
                 "nationality" => "DE",
                 "card_category" => "adult",
                 "spa_category" => "adult",
@@ -90,6 +90,8 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
     $response['error'] = false;
     $jp = new JsonProxy();
     $jp->setUrl("https://oats-test-wcs.wilken.de/pms/v1/regform/create");
+    $jp->setUsername($mandantInfoData['awcusername']);
+    $jp->setPassword($mandantInfoData['awcpassword']);
     $jp->setRequestType('POST');
     $jp->setData($awcData);
     $jp->setRequestEncode(true);
