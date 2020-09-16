@@ -6,97 +6,75 @@ namespace Alpdesk\AlpdeskAwcPlugin\Elements;
 
 use Alpdesk\AlpdeskCore\Elements\AlpdeskCoreElement;
 use Alpdesk\AlpdeskCore\Library\Mandant\AlpdescCoreBaseMandantInfo;
-use Alpdesk\AlpdeskCore\Utils\JsonProxy;
+use Alpdesk\AlpdeskAwcPlugin\Channels\AWC\AWCChannel;
+use Alpdesk\AlpdeskAwcPlugin\Channels\AWC\AWCPerson;
 
 class AlpdeskElementAwc extends AlpdeskCoreElement {
 
   private function testRequest(array $response, array $mandantInfoData): array {
 
-    $awcData = array(
-        "operator_info" => null,
-        "software_vendor" => "alpdesk",
-        "software_name" => "alpdesk",
-        "software_version" => 1,
-        "api_key" => $mandantInfoData['awcapikey'],
-        "guesthouse" => $mandantInfoData['awckey'],
-        "guesthouse_override" => null,
-        "regform_id" => null,
-        "state" => null,
-        "online_checkin_link" => null,
-        "online_checkin_lock" => false,
-        "online_checking_mailing_state" => null,
-        "travel_guide_link" => null,
-        "travel_guide_mailing_state" => null,
-        "mail_state" => null,
-        "journey_reason" => "holiday",
-        "modification_note" => "I'm sorry about the mistake and fixed it.",
-        "persons" => [
-            [
-                "person_id" => null,
-                "visible_card_nr" => null,
-                "mifare_id" => null,
-                "salutation" => "MR",
-                "first_name" => "Benjmain",
-                "last_name" => "Hummel",
-                "main_person" => true,
-                "arrival" => date('Y-m-d'),
-                "departure" => date('Y-m-d'),
-                "birthdate" => "1985-11-21",
-                "nationality" => "DE",
-                "card_category" => "adult",
-                "spa_category" => "adult",
-                "address" => [
-                    "street" => "Debian 1",
-                    "zip" => "80000",
-                    "city" => "Linux",
-                    "state" => "Bayern",
-                    "country" => "DE"
-                ],
-                "passport" => "PA 123456",
-                "email" => "infos@x-projects.de",
-                "advertisment" => true
-            ], [
-                "person_id" => null,
-                "visible_card_nr" => null,
-                "mifare_id" => null,
-                "salutation" => "MRS",
-                "first_name" => "Carina",
-                "last_name" => "Hummel",
-                "main_person" => false,
-                "arrival" => date('Y-m-d'),
-                "departure" => date('Y-m-d'),
-                "birthdate" => '1986-11-10',
-                "nationality" => "DE",
-                "card_category" => "adult",
-                "spa_category" => "adult",
-                "address" => [
-                    "street" => "Debian 1",
-                    "zip" => "80000",
-                    "city" => "Linux",
-                    "state" => "Byyern",
-                    "country" => "DE"
-                ],
-                "passport" => "PA 9844447",
-                "email" => "carina.hummel@x-projects.de",
-                "advertisment" => true
-            ]
-        ]
+    $awcChannel = new AWCChannel();
+
+    $awcChannel->url = "https://oats-test-wcs.wilken.de/pms/v1/regform/create";
+    $awcChannel->username = $mandantInfoData['awcusername'];
+    $awcChannel->password = $mandantInfoData['awcpassword'];
+
+    $awcChannel->swvendor = "alpdesk";
+    $awcChannel->swname = "alpdesk";
+    $awcChannel->awcapikey = $mandantInfoData['awcapikey'];
+    $awcChannel->awckey = $mandantInfoData['awckey'];
+    $awcChannel->journey_reason = "holiday";
+    $awcChannel->modification_note = "test";
+
+    $p1 = new AWCPerson();
+    $p1->salutation = "MR";
+    $p1->first_name = "Benjmain";
+    $p1->last_name = "Hummel";
+    $p1->main_person = true;
+    $p1->arrival = date('Y-m-d');
+    $p1->departure = date('Y-m-d');
+    $p1->birthdate = "1985-11-21";
+    $p1->nationality = "DE";
+    $p1->card_category = "adult";
+    $p1->spa_category = "adult";
+    $p1->street = "Debian 1";
+    $p1->zip = "80000";
+    $p1->city = "Linux";
+    $p1->state = "Bayern";
+    $p1->country = "DE";
+    $p1->passport = "";
+    $p1->email = "infos@x-projects.de";
+    $p1->advertisment = true;
+    $awcChannel->addPerson($p1);
+
+    $p2 = new AWCPerson();
+    $p2->salutation = "MRS";
+    $p2->first_name = "Carina";
+    $p2->last_name = "Hummel";
+    $p2->main_person = false;
+    $p2->arrival = date('Y-m-d');
+    $p2->departure = date('Y-m-d');
+    $p2->birthdate = "1986-11-10";
+    $p2->nationality = "DE";
+    $p2->card_category = "adult";
+    $p2->spa_category = "adult";
+    $p2->street = "Debian 1";
+    $p2->zip = "80000";
+    $p2->city = "Linux";
+    $p2->state = "Bayern";
+    $p2->country = "DE";
+    $p2->passport = "";
+    $p2->email = "carina.hummel@x-projects.de";
+    $p2->advertisment = true;
+    $awcChannel->addPerson($p2);
+
+    $awcChannel->exec();
+    $response['error'] = ( $awcChannel->errorCode == 0 ? false : true);
+    $response['msg'] = array(
+        'code' => $awcChannel->errorCode,
+        'responseMessage' => $awcChannel->responseMessage
     );
 
-    //dump($awcData);
-    //dump(json_encode($awcData));
-    //die;
-
-    $response['error'] = false;
-    $jp = new JsonProxy();
-    $jp->setUrl("https://oats-test-wcs.wilken.de/pms/v1/regform/create");
-    $jp->setUsername($mandantInfoData['awcusername']);
-    $jp->setPassword($mandantInfoData['awcpassword']);
-    $jp->setRequestType('POST');
-    $jp->setData($awcData);
-    $jp->setRequestEncode(true);
-    $jp->setResponseDecode(true);
-    $response['msg'] = $jp->exec();
     return $response;
   }
 
