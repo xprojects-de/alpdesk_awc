@@ -8,6 +8,7 @@ use Alpdesk\AlpdeskCore\Elements\AlpdeskCoreElement;
 use Alpdesk\AlpdeskCore\Library\Mandant\AlpdescCoreBaseMandantInfo;
 use Alpdesk\AlpdeskAwcPlugin\Channels\AWC\AWCChannel;
 use Alpdesk\AlpdeskAwcPlugin\Channels\AWC\AWCPerson;
+use Alpdesk\AlpdeskAwcPlugin\Utils\Logger;
 
 class AlpdeskElementAwc extends AlpdeskCoreElement {
 
@@ -74,6 +75,8 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
         'code' => $awcChannel->errorCode,
         'responseMessage' => $awcChannel->responseMessage
     );
+
+    Logger::log('AWC', $mandantInfoData['awckey'], $awcChannel->requestString, "Code: ".$awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
 
     return $response;
   }
