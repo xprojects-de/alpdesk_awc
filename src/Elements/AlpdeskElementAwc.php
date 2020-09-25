@@ -141,8 +141,9 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
       }
       //dump($awcChannel);
       //die;
-      $awcChannel->exec();
-      $registrationformnumber = '12345';
+      $execResponse = $awcChannel->exec();
+      //dump($execResponse);die;
+      $registrationformnumber = $execResponse['regform_id'];
       $response['error'] = ( $awcChannel->errorCode == 0 ? false : true);
       $response['msg'] = array(
           'code' => $awcChannel->errorCode,
