@@ -1,0 +1,46 @@
+<p:wcsrequest version='2.5.0' guesthousenumber='' xmlns:p='http://wcs.wilken.de/WcsRequestResponse' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://wcs.wilken.de/WcsRequestResponse/request_schema.xsd'>
+  <req_registrationformcreate>
+    <!-- group or standard -->
+    <registrationtype>standard</registrationtype>
+    <stay>
+      <arrival>2020-09-25</arrival>
+      <departure>2020-09-26</departure>
+    </stay>
+    <travelpurpose>holiday</travelpurpose>
+    <group>
+      <mainperson>
+        <name>Hummel</name>   
+        <!-- Optional -->     
+        <prename>Benjmain</prename>
+        <!-- Optional -->  
+        <birthdate>1985-11-21</birthdate>
+        <salutation>Herr</salutation>        
+        <nationality>DE</nationality>
+        <address>  
+          <!-- Optional -->           
+          <streetnr>Auf der Halde 1</streetnr>      
+          <country>DE</country>
+          <!-- Optional -->  
+          <zip>87534</zip>
+          <!-- Optional -->  
+          <city>Oberstaufen</city>          
+        </address>
+      </mainperson>
+      <groupregistration/>
+      <!-- Optional -->  
+      <accompanists>
+        <!-- Array -->
+        <accompanist>
+          <name>Hummel</name>
+          <!-- Optional -->           
+          <prename>Carina</prename>
+          <!-- Optional -->          
+          <birthdate>1986-10-11</birthdate>          
+        </accompanist>        
+      </accompanists>
+    </group>
+  </req_registrationformcreate>
+</p:wcsrequest>
+
+<-- minified version -->
+<p:wcsrequest version='2.5.0' guesthousenumber='' xmlns:p='http://wcs.wilken.de/WcsRequestResponse' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://wcs.wilken.de/WcsRequestResponse/request_schema.xsd'><req_registrationformcreate><registrationtype>standard</registrationtype><stay><arrival>2020-09-25</arrival><departure>2020-09-26</departure></stay><travelpurpose>holiday</travelpurpose><group><mainperson><name>Hummel</name><prename>Benjmain</prename><birthdate>1985-11-21</birthdate><salutation>Herr</salutation><nationality>DE</nationality><address><streetnr>Auf der Halde 1</streetnr><country>DE</country><zip>87534</zip><city>Oberstaufen</city></address></mainperson><groupregistration/><accompanists><accompanist><name>Hummel</name><prename>Carina</prename><birthdate>1986-10-11</birthdate></accompanist></accompanists></group></req_registrationformcreate></p:wcsrequest>

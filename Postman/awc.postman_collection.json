@@ -219,6 +219,43 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://api.alpdesk.de/pluginLegacyAdd",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMDYxMjI1LCJuYmYiOjE2MDEwNjEyMjUsImV4cCI6MTYwMTA2NDgyNSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.WoSrx7N0MHVB960zLDAki3f-YhPDLFuL7rtlq49NsBU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"plugin\":\"awc\",\n    \"data\":{\n        \"method\":\"legacy_add\",\n        \"param\": \"<p:wcsrequest version='2.5.0' guesthousenumber='' xmlns:p='http://wcs.wilken.de/WcsRequestResponse' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://wcs.wilken.de/WcsRequestResponse/request_schema.xsd'><req_registrationformcreate><registrationtype>standard</registrationtype><stay><arrival>2020-09-25</arrival><departure>2020-09-26</departure></stay><travelpurpose>holiday</travelpurpose><group><mainperson><name>Hummel</name><prename>Benjmain</prename><birthdate>1985-11-21</birthdate><salutation>Herr</salutation><nationality>DE</nationality><address><streetnr>Auf der Halde 1</streetnr><country>DE</country><zip>87534</zip><city>Oberstaufen</city></address></mainperson><groupregistration/><accompanists><accompanist><name>Hummel</name><prename>Carina</prename><birthdate>1986-10-11</birthdate></accompanist></accompanists></group></req_registrationformcreate></p:wcsrequest>\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://xdebian/plugin",
+					"protocol": "http",
+					"host": [
+						"xdebian"
+					],
+					"path": [
+						"plugin"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
