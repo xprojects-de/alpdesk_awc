@@ -21,6 +21,7 @@ class AWCChannel {
   private $persons = array();
   public $errorCode = -1;
   public $responseMessage = "invalid response";
+  public $requestString = "";
 
   public function addPerson(AWCPerson $person) {
     array_push($this->persons, array(
@@ -51,7 +52,7 @@ class AWCChannel {
   }
 
   private function getData(): array {
-    return array(
+    $data = array(
         "operator_info" => null,
         "software_vendor" => $this->swvendor,
         "software_name" => $this->swname,
@@ -71,6 +72,11 @@ class AWCChannel {
         "modification_note" => $this->modification_note,
         "persons" => $this->persons
     );
+    
+    $this->requestString = json_encode($data);
+    
+    return $data;
+    
   }
 
   public function exec(): array {
@@ -93,7 +99,7 @@ class AWCChannel {
         }
       }
     }
-    return $jp->exec();
+    return $response;
   }
 
 }

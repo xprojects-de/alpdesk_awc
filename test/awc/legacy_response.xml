@@ -1,0 +1,8 @@
+<wcsresponse returncode="0" message=""> 
+  <resp_registrationformprint>
+    <responsevalue name="registrationformnumber">0123456789</responsevalue> 
+  </resp_registrationformprint>
+</wcsresponse>
+
+<!-- minify version -->
+<wcsresponse returncode="0" message=""><resp_registrationformprint><responsevalue name="registrationformnumber">0123456789</responsevalue></resp_registrationformprint></wcsresponse>
