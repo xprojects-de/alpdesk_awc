@@ -152,7 +152,7 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
 
       Logger::log('AWC', $mandantInfoData['awckey'], $awcChannel->requestString, "Code: " . $awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
     } catch (\Exception $ex) {
-      throw new Exception($ex->getMessage());
+      throw new \Exception($ex->getMessage());
     }
 
     return $response;
