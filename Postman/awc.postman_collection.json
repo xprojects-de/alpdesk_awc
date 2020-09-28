@@ -21,10 +21,11 @@
 					"raw": "{\n    \"username\": \"testmandant\",\n    \"password\": \"1234567890\"\n}"
 				},
 				"url": {
-					"raw": "http://xdebian/auth",
+					"raw": "http://contao.local/auth",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"auth"
@@ -41,7 +42,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAwMDgzNDQ5LCJuYmYiOjE2MDAwODM0NDksImV4cCI6MTYwMDA4NzA0OSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.V2m0XDU0vI6ai06IvXgRK89zZUtugrHB77XRVSnQX7k",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
 							"type": "string"
 						}
 					]
@@ -58,10 +59,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://xdebian/auth/verify",
+					"raw": "http://contao.local/auth/verify",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"auth",
@@ -96,10 +98,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://xdebian/auth/logout",
+					"raw": "http://contao.local/auth/logout",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"auth",
@@ -117,7 +120,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAwMDgzNDQ5LCJuYmYiOjE2MDAwODM0NDksImV4cCI6MTYwMDA4NzA0OSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.V2m0XDU0vI6ai06IvXgRK89zZUtugrHB77XRVSnQX7k",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
 							"type": "string"
 						}
 					]
@@ -134,10 +137,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://xdebian/mandant",
+					"raw": "http://contao.local/mandant",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"mandant"
@@ -154,7 +158,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAwMDgzNDQ5LCJuYmYiOjE2MDAwODM0NDksImV4cCI6MTYwMDA4NzA0OSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.V2m0XDU0vI6ai06IvXgRK89zZUtugrHB77XRVSnQX7k",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
 							"type": "string"
 						}
 					]
@@ -171,10 +175,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://xdebian/plugin",
+					"raw": "http://contao.local/plugin",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"plugin"
@@ -208,10 +213,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://xdebian/plugin",
+					"raw": "http://contao.local/plugin",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"plugin"
@@ -228,7 +234,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMDYxMjI1LCJuYmYiOjE2MDEwNjEyMjUsImV4cCI6MTYwMTA2NDgyNSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.WoSrx7N0MHVB960zLDAki3f-YhPDLFuL7rtlq49NsBU",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
 							"type": "string"
 						}
 					]
@@ -245,10 +251,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://xdebian/plugin",
+					"raw": "http://contao.local/plugin",
 					"protocol": "http",
 					"host": [
-						"xdebian"
+						"contao",
+						"local"
 					],
 					"path": [
 						"plugin"
