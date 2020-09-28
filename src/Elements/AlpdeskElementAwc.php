@@ -139,15 +139,14 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
         $pA->advertisment = true;
         $awcChannel->addPerson($pA);
       }
-      //dump($awcChannel);
-      //die;
+
       $execResponse = $awcChannel->exec();
-      //dump($execResponse);die;
       $registrationformnumber = $execResponse['regform_id'];
       $response['error'] = ( $awcChannel->errorCode == 0 ? false : true);
       $response['msg'] = array(
           'code' => $awcChannel->errorCode,
-          'responseMessage' => '<wcsresponse returncode="' . $awcChannel->errorCode . '" message="' . $awcChannel->responseMessage . '"><resp_registrationformprint><responsevalue name="registrationformnumber">' . $registrationformnumber . '</responsevalue></resp_registrationformprint></wcsresponse>'
+          'registrationformnumber' => $registrationformnumber,
+          'responseMessage' => $awcChannel->responseMessage
       );
 
       Logger::log('AWC', $mandantInfoData['awckey'], $awcChannel->requestString, "Code: " . $awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
@@ -168,7 +167,8 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
       } catch (\Exception $ex) {
         $response['msg'] = array(
             'code' => 10,
-            'responseMessage' => '<wcsresponse returncode="' . 10 . '" message="' . $ex->getMessage() . '"><resp_registrationformprint><responsevalue name="registrationformnumber"></responsevalue></resp_registrationformprint></wcsresponse>'
+            'registrationformnumber' => 0,
+            'responseMessage' => $ex->getMessage()
         );
       }
     }
