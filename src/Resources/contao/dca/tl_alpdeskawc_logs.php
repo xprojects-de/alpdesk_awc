@@ -19,13 +19,14 @@ $GLOBALS['TL_DCA']['tl_alpdeskawc_logs'] = array
         'sorting' => array
             (
             'mode' => 2,
-            'fields' => array('channel ASC'),
+            'fields' => array('tstamp DESC'),
             'flag' => 1,
             'panelLayout' => 'filter;sort,search,limit'
         ),
         'label' => array
             (
-            'fields' => array('channel', 'key'),
+            'fields' => array('tstamp', 'channel', 'key'),
+            'label_callback' => array('tl_alpdeskawc_logs', 'showLabels'),
             'showColumns' => true
         ),
         'global_operations' => array
@@ -91,7 +92,7 @@ $GLOBALS['TL_DCA']['tl_alpdeskawc_logs'] = array
             (
             'label' => &$GLOBALS['TL_LANG']['tl_alpdeskawc_logs']['request'],
             'exclude' => true,
-            'search' => true,
+            'search' => false,
             'inputType' => 'textarea',
             'eval' => array('mandatory' => false, 'tl_class' => 'clr'),
             'sql' => "mediumtext NULL"
@@ -100,10 +101,19 @@ $GLOBALS['TL_DCA']['tl_alpdeskawc_logs'] = array
             (
             'label' => &$GLOBALS['TL_LANG']['tl_alpdeskawc_logs']['response'],
             'exclude' => true,
-            'search' => true,
+            'search' => false,
             'inputType' => 'textarea',
             'eval' => array('mandatory' => false, 'tl_class' => 'clr'),
             'sql' => "mediumtext NULL"
         )
     )
 );
+
+class tl_alpdeskawc_logs extends Backend {
+
+  public function showLabels($row, $label, DataContainer $dc, $args) {
+    $args[0] = date('d.m.Y H:i:s', $args[0]);
+    return $args;
+  }
+
+}

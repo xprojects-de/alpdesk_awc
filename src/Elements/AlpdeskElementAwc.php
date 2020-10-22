@@ -79,14 +79,15 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
         'responseMessage' => $awcChannel->responseMessage
     );
 
-    Logger::log('AWC', $mandantInfoData['awckey'], $awcChannel->requestString, "Code: " . $awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
+    $logKey = ($mandantInfoData['awckey_overrite'] != "" ? $mandantInfoData['awckey'] . '/' . $mandantInfoData['awckey_overrite'] : $mandantInfoData['awckey']);
+    Logger::log('AWC', $logKey, $awcChannel->requestString, "Code: " . $awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
 
     return $response;
   }
 
   private function sendRequestFromArray(array $response, array $mandantInfoData, array $data) {
     try {
-      
+
       $awcChannel = new AWCChannel();
 
       $awcChannel->url = "https://oats-test-wcs.wilken.de/pms/v1/regform/create";
@@ -146,7 +147,7 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
         $pA->advertisment = true;
         $awcChannel->addPerson($pA);
       }
-      
+
       $execResponse = $awcChannel->exec();
       $registrationformnumber = $execResponse['regform_id'];
       $response['error'] = ( $awcChannel->errorCode == 0 ? false : true);
@@ -156,7 +157,8 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
           'responseMessage' => $awcChannel->responseMessage
       );
 
-      Logger::log('AWC', $mandantInfoData['awckey'], $awcChannel->requestString, "Code: " . $awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
+      $logKey = ($mandantInfoData['awckey_overrite'] != "" ? $mandantInfoData['awckey'] . '/' . $mandantInfoData['awckey_overrite'] : $mandantInfoData['awckey']);
+      Logger::log('AWC', $logKey, $awcChannel->requestString, "Code: " . $awcChannel->errorCode . " => Message: " . $awcChannel->responseMessage);
     } catch (\Exception $ex) {
       throw new \Exception($ex->getMessage());
     }
