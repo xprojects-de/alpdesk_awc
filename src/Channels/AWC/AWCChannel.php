@@ -14,6 +14,7 @@ class AWCChannel {
   public $password = "";
   public $awcapikey;
   public $awckey;
+  public $awckey_overrite = null;
   public $swvendor = "alpdesk";
   public $swname = "alpdesk";
   public $journey_reason = "";
@@ -59,7 +60,7 @@ class AWCChannel {
         "software_version" => 1,
         "api_key" => $this->awcapikey,
         "guesthouse" => $this->awckey,
-        "guesthouse_override" => null,
+        "guesthouse_override" => $this->awckey_overrite,
         "regform_id" => null,
         "state" => null,
         "online_checkin_link" => null,

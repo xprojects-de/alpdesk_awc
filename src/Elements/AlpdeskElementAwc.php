@@ -23,6 +23,9 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
     $awcChannel->swvendor = "alpdesk";
     $awcChannel->swname = "alpdesk";
     $awcChannel->awcapikey = $mandantInfoData['awcapikey'];
+    if ($mandantInfoData['awckey_overrite'] != "") {
+      $awcChannel->awckey_overrite = $mandantInfoData['awckey_overrite'];
+    }
     $awcChannel->awckey = $mandantInfoData['awckey'];
     $awcChannel->journey_reason = "holiday";
     $awcChannel->modification_note = "test";
@@ -83,6 +86,7 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
 
   private function sendRequestFromArray(array $response, array $mandantInfoData, array $data) {
     try {
+      
       $awcChannel = new AWCChannel();
 
       $awcChannel->url = "https://oats-test-wcs.wilken.de/pms/v1/regform/create";
@@ -93,6 +97,9 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
       $awcChannel->swname = "alpdesk";
       $awcChannel->awcapikey = $mandantInfoData['awcapikey'];
       $awcChannel->awckey = $mandantInfoData['awckey'];
+      if ($mandantInfoData['awckey_overrite'] != "") {
+        $awcChannel->awckey_overrite = $mandantInfoData['awckey_overrite'];
+      }
       $awcChannel->journey_reason = $data['req_registrationformcreate']['travelpurpose'];
       $awcChannel->modification_note = $data['req_registrationformcreate']['registrationtype'];
 
@@ -139,7 +146,7 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
         $pA->advertisment = true;
         $awcChannel->addPerson($pA);
       }
-
+      
       $execResponse = $awcChannel->exec();
       $registrationformnumber = $execResponse['regform_id'];
       $response['error'] = ( $awcChannel->errorCode == 0 ? false : true);
