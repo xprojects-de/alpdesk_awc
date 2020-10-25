@@ -16,7 +16,7 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
 
     $awcChannel = new AWCChannel();
 
-    $awcChannel->url = "https://oats-test-wcs.wilken.de/pms/v1/regform/create";
+    $awcChannel->url = ($GLOBALS['TL_CONFIG']['awc_baseurl'] != '' ? $GLOBALS['TL_CONFIG']['awc_baseurl'] . '/pms/v1/regform/create' : 'https://oats-test-wcs.wilken.de/pms/v1/regform/create');
     $awcChannel->username = $mandantInfoData['awcusername'];
     $awcChannel->password = $mandantInfoData['awcpassword'];
 
@@ -90,7 +90,7 @@ class AlpdeskElementAwc extends AlpdeskCoreElement {
 
       $awcChannel = new AWCChannel();
 
-      $awcChannel->url = "https://oats-test-wcs.wilken.de/pms/v1/regform/create";
+      $awcChannel->url = ($GLOBALS['TL_CONFIG']['awc_baseurl'] != '' ? $GLOBALS['TL_CONFIG']['awc_baseurl'] . '/pms/v1/regform/create' : 'https://oats-test-wcs.wilken.de/pms/v1/regform/create');
       $awcChannel->username = $mandantInfoData['awcusername'];
       $awcChannel->password = $mandantInfoData['awcpassword'];
 
