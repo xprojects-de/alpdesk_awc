@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "https://api.alpdesk.de/auth",
+			"name": "Auth",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -18,14 +18,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"testmandant\",\n    \"password\": \"1234567890\"\n}"
+					"raw": "{\n    \"username\": \"BetriebAAA-user\",\n    \"password\": \"1234567890\"\n}"
 				},
 				"url": {
-					"raw": "http://contao.local/auth",
+					"raw": "http://dev-awc.vakanza-online.de/auth",
 					"protocol": "http",
 					"host": [
-						"contao",
-						"local"
+						"dev-awc",
+						"vakanza-online",
+						"de"
 					],
 					"path": [
 						"auth"
@@ -35,206 +36,14 @@
 			"response": []
 		},
 		{
-			"name": "https://api.alpdesk.de/auth/verify",
+			"name": "LegacyAdd",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://contao.local/auth/verify",
-					"protocol": "http",
-					"host": [
-						"contao",
-						"local"
-					],
-					"path": [
-						"auth",
-						"verify"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://api.alpdesk.de/auth/logout",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNTkyMjE1OTM5LCJuYmYiOjE1OTIyMTU5MzksImV4cCI6MTU5MjIxOTUzOSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.uJ55HQSD1DTiM9QPU-1X0N3EQVa2ypUyZ-f__Io1tuw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://contao.local/auth/logout",
-					"protocol": "http",
-					"host": [
-						"contao",
-						"local"
-					],
-					"path": [
-						"auth",
-						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://api.alpdesk.de/mandant",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://contao.local/mandant",
-					"protocol": "http",
-					"host": [
-						"contao",
-						"local"
-					],
-					"path": [
-						"mandant"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://api.alpdesk.de/plugin",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"plugin\":\"awc\",\n    \"data\":{\n        \"method\":\"ping\",\n        \"param\": \"\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://contao.local/plugin",
-					"protocol": "http",
-					"host": [
-						"contao",
-						"local"
-					],
-					"path": [
-						"plugin"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://api.alpdesk.de/pluginTest",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAwMDg2OTg1LCJuYmYiOjE2MDAwODY5ODUsImV4cCI6MTYwMDA5MDU4NSwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.N5xyzugJECYVHLcd4P877oUtPTMJETEJipMqIMGFskU",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"plugin\":\"awc\",\n    \"data\":{\n        \"method\":\"test\",\n        \"param\": \"\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://contao.local/plugin",
-					"protocol": "http",
-					"host": [
-						"contao",
-						"local"
-					],
-					"path": [
-						"plugin"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://api.alpdesk.de/pluginLegacyAdd",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5MFpYTjBiV0Z1WkdGdWRBPT0ifQ.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOTBaWE4wYldGdVpHRnVkQT09IiwiaWF0IjoxNjAxMTQ0NDE0LCJuYmYiOjE2MDExNDQ0MTQsImV4cCI6MTYwMTE0ODAxNCwidXNlcm5hbWUiOiJ0ZXN0bWFuZGFudCJ9.kyIYHJ-wSYSvY6ekvlZouaVicC-RiUTXlIj1IpvfZJ8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5Q1pYUnlhV1ZpUVVGQkxYVnpaWEk9In0.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOUNaWFJ5YVdWaVFVRkJMWFZ6WlhJPSIsImlhdCI6MTYyMTY1MTA1MywibmJmIjoxNjIxNjUxMDUzLCJleHAiOjE2MjE2NTQ2NTMsInVzZXJuYW1lIjoiQmV0cmllYkFBQS11c2VyIn0.k8CdG_fxd1sx701ryCGSpB3xPuuTJYsFZGVrIuTldU4",
 							"type": "string"
 						}
 					]
@@ -251,11 +60,51 @@
 					}
 				},
 				"url": {
-					"raw": "http://contao.local/plugin",
+					"raw": "http://dev-awc.vakanza-online.de/plugin",
 					"protocol": "http",
 					"host": [
-						"contao",
-						"local"
+						"dev-awc",
+						"vakanza-online",
+						"de"
+					],
+					"path": [
+						"plugin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LegacyAdd Multi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXeHdaR1Z6YTE5Q1pYUnlhV1ZpUVVGQkxYVnpaWEk9In0.eyJpc3MiOiJBbHBkZXNrIiwiYXVkIjoiaHR0cHM6XC9cL2FscGRlc2suZGUiLCJqdGkiOiJZV3h3WkdWemExOUNaWFJ5YVdWaVFVRkJMWFZ6WlhJPSIsImlhdCI6MTYyMTY1MTA1MywibmJmIjoxNjIxNjUxMDUzLCJleHAiOjE2MjE2NTQ2NTMsInVzZXJuYW1lIjoiQmV0cmllYkFBQS11c2VyIn0.k8CdG_fxd1sx701ryCGSpB3xPuuTJYsFZGVrIuTldU4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"plugin\":\"awc\",\n    \"data\":{\n        \"method\":\"legacy_add\",\n        \"param\": \"<p:wcsrequest version='2.5.0' guesthousenumber='' xmlns:p='http://wcs.wilken.de/WcsRequestResponse' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://wcs.wilken.de/WcsRequestResponse/request_schema.xsd'><req_registrationformcreate><registrationtype>standard</registrationtype><stay><arrival>2020-09-25</arrival><departure>2020-09-26</departure></stay><travelpurpose>holiday</travelpurpose><group><mainperson><name>Hummel</name><prename>Benjmain</prename><birthdate>1985-11-21</birthdate><salutation>Herr</salutation><nationality>DE</nationality><address><streetnr>Auf der Halde 1</streetnr><country>DE</country><zip>87534</zip><city>Oberstaufen</city></address></mainperson><groupregistration/><accompanists><accompanist><name>Hummel</name><prename>Carina</prename><birthdate>1986-10-11</birthdate></accompanist><accompanist><name>Hummel</name><prename>Niklas</prename><birthdate>2014-09-15</birthdate></accompanist></accompanists></group></req_registrationformcreate></p:wcsrequest>\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dev-awc.vakanza-online.de/plugin",
+					"protocol": "http",
+					"host": [
+						"dev-awc",
+						"vakanza-online",
+						"de"
 					],
 					"path": [
 						"plugin"
@@ -264,6 +113,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
